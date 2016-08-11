@@ -2,6 +2,10 @@
 <h2>Ingredients</h2>
 <% @cocktail.ingredients.each do |ingredient| %>
   <p>Name : <%= ingredient.name %></p>
+  <p>Description : <%= Dose.where(cocktail_id: @cocktail).where(ingredient_id: ingredient).first.description %></p>
+  <%= link_to "Delete dose", cocktail_dose_path(Dose.where(cocktail_id: @cocktail).where(ingredient_id: ingredient).first), method: :delete %>
 <% end %>
+
+<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
 
 <%= link_to "Back to index", cocktails_path %>
