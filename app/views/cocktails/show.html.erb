@@ -1,11 +1,25 @@
 <h1><%= @cocktail.name %></h1>
 <h2>Ingredients</h2>
-<% @cocktail.ingredients.each do |ingredient| %>
-  <p>Name : <%= ingredient.name %></p>
-  <p>Description : <%= Dose.where(cocktail_id: @cocktail).where(ingredient_id: ingredient).first.description %></p>
-  <%= link_to "Delete dose", cocktail_dose_path(Dose.where(cocktail_id: @cocktail).where(ingredient_id: ingredient).first), method: :delete %>
+<% @cocktail.doses.each do |dose| %>
+  <p>Name : <%= dose.ingredient.name %></p>
+  <p>Description : <%= dose.description %></p>
+  <p><%= link_to "Delete dose", cocktail_dose_path(@cocktail, dose), method: :delete %></p>
 <% end %>
 
-<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
+<h2>Add a dose</h2>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :ingredient_id, collection: Ingredient.all %>
+  <%= f.input :description %>
+    <% if @dose.errors.any? %>
+    <% @dose.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
+
+  <%= f.button :submit %>
+<% end %>
+
+<%#= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
 
 <%= link_to "Back to index", cocktails_path %>
