@@ -8,3 +8,5 @@
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
+
+Cocktail.create(name: "mojito", picture: "http://www.lesinvestigateurs.com/wp-content/uploads/34660_dia_1425_950_don_julio_mojito_37_069A0000001gyNVIAY.jpg")
