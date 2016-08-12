@@ -1,4 +1,4 @@
-<%= simple_form_for(@cocktail) do |f| %>
+<%= simple_form_for(@ingredient) do |f| %>
 
   <%= f.input :name %>
   <%= f.input :photo, as: :attachinary %>
@@ -6,4 +6,4 @@
   <%= f.button :submit %>
 <% end %>
 
-<%= link_to "Cocktail list", "/" %>
+<%= link_to 'Last cocktail visited', url_for(:back) %>

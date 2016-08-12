@@ -1,19 +1,19 @@
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModalIngredient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add a cocktail</h4>
+        <h4 class="modal-title" id="myModalLabel">Add an ingredient</h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for(@cocktail = Cocktail.new) do |f| %>
+        <%= simple_form_for(@ingredient = Ingredient.new) do |f| %>
           <%= f.input :name %>
           <%= f.input :photo, as: :attachinary %>
-          <% if @cocktail.photo? %>
-            <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
+          <% if @ingredient.photo? %>
+            <%= cl_image_tag @ingredient.photo.path, width: 200, height: 300, crop: :fill %>
           <% end %>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= f.button :submit, "Save Cocktail", class: "btn btn-danger" %>
+          <%= f.button :submit, "Save Ingredient", class: "btn btn-danger" %>
         <% end %>
       </div>
     </div>
