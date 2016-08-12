@@ -11,11 +11,7 @@
 
   <body>
     <%= render "/shared/navbar" %>
-    <div class="wrapper">
-      <div class="main_container">
-        <%= yield %>
-      </div>
-    </div>
+    <%= yield %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= cloudinary_js_config %>
   </body>

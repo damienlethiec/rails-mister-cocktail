@@ -1,13 +1,31 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <i class="fa fa-glass" aria-hidden="true" style = "font-size : 30px"></i>
+    <i class="fa fa-home" aria-hidden="true" style = "font-size : 30px"></i>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+      <%= link_to "#", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" do %>
+      <i class="fa fa-glass" aria-hidden="true" style = "font-size : 30px"></i>
+        <% end %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <% Cocktail.all.each do |cocktail| %>
+            <li>
+              <%= link_to cocktail.name, cocktail_path(cocktail)%>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
     <!-- Search form -->
+    <button type="button" class="navbar-wagon-item navbar-wagon-button btn" data-toggle="modal" data-target="#myModalIngredient">
+      Add an ingredient
+    </button>
     <button type="button" class="navbar-wagon-item navbar-wagon-button btn" data-toggle="modal" data-target="#myModal">
       Add a cocktail
     </button>
@@ -26,3 +44,4 @@
 </div>
 
 <%= render "/shared/modal" %>
+<%= render "/shared/modal_ingredient" %>

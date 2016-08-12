@@ -1,13 +1,16 @@
 <h1>Here are all the cocktails</h1>
-<div class="container">
-  <div class="row">
-    <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(255,102,102,0.4) 0%, rgba(255,204,102, 0.4) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{cocktail.photo.path}" %>); background-size: cover;">
-          <div class="card-category"><%= cocktail.name %></div>
-          <%= link_to "#", cocktail_path(cocktail), class: "card-link" %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(255,102,102,0.4) 0%, rgba(255,204,102, 0.4) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{cocktail.photo.path}" %>); background-size: cover;">
+            <div class="card-category"><%= cocktail.name %></div>
+            <%= link_to "#", cocktail_path(cocktail), class: "card-link" %>
+          </div>
+          <%= link_to "Delete cocktail", cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?" } %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

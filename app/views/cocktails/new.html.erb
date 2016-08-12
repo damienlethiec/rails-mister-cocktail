@@ -1,9 +1,14 @@
-<%= simple_form_for(@cocktail) do |f| %>
-
-  <%= f.input :name %>
-  <%= f.input :photo, as: :attachinary %>
-
-  <%= f.button :submit %>
-<% end %>
-
-<%= link_to "Cocktail list", "/" %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <%= simple_form_for(@cocktail) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :photo, as: :attachinary %>
+          <%= f.button :submit, class: "btn btn-danger"%>
+          <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModalIngredient">Back to cocktail list</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

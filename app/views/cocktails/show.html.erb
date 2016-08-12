@@ -11,25 +11,12 @@
       <%= link_to "Delete dose", cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "Are you sure?" } %>
       </div>
     <% end %>
-</div>
-
-<h2>Add a dose</h2>
-
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.association :ingredient %>
-    <button type="button" class="navbar-wagon-item navbar-wagon-button btn" data-toggle="modal" data-target="#myModalIngredient">
-    Add an ingredient
+  </div>
+    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModalDose">
+    Add a Dose
     </button>
-  <%= f.input :description, placeholder: '6cl' %>
-    <% if @dose.errors.any? %>
-    <% @dose.errors.full_messages.each do |message| %>
-      <%= message %>
-    <% end %>
-  <% end %>
-
-  <%= f.button :submit %>
-<% end %>
-
 </div>
 
+<%= render "/shared/modal_dose" %>
 <%= render "/shared/modal_ingredient" %>
+
