@@ -4,7 +4,7 @@
   <div class="row">
     <% @cocktail.doses.each do |dose| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(255,102,102,0.4) 0%, rgba(255,204,102, 0.4) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{dose.ingredient.photo.path}" %>); background-size: cover;">
+        <div class="card" style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{dose.ingredient.photo.path}" %>); background-size: cover;">
         <%#= link_to "#", "#", class: "card-link" %>
         </div>
       <p>Description : <%= dose.description %></p>

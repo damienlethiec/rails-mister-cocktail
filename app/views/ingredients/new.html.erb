@@ -1,9 +1,14 @@
-<%= simple_form_for(@ingredient) do |f| %>
-
-  <%= f.input :name %>
-  <%= f.input :photo, as: :attachinary %>
-
-  <%= f.button :submit %>
-<% end %>
-
-<%= link_to 'Last cocktail visited', url_for(:back) %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <%= simple_form_for(@ingredient) do |f| %>
+          <%= f.input :name %>
+           <%= f.input :photo, as: :attachinary %>
+          <%= f.button :submit, "Save Ingredient", class: "btn btn-danger" %>
+          <%= link_to "Last cocktail visited", url_for(:back), class: "btn btn-default" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

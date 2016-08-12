@@ -2,7 +2,7 @@
   position: relative;
   border-radius: 5px;
   color: white;
-  height: 250px;
+  height: 200px;
   margin:25px 0px;
   h2 {
     margin-bottom: 8px;
@@ -10,16 +10,13 @@
 }
 
 .card-category {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 25px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 30px;
 }
 
 .card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
+  text-align: center;
 }
 
 .card-user {

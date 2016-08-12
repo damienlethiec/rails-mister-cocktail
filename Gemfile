@@ -35,6 +35,7 @@ gem 'figaro'
 gem 'cloudinary', '1.1.0'
 gem "attachinary", "1.3.1"
 gem "jquery-fileupload-rails"
+gem 'responders'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

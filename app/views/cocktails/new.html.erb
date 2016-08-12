@@ -6,7 +6,7 @@
           <%= f.input :name %>
           <%= f.input :photo, as: :attachinary %>
           <%= f.button :submit, class: "btn btn-danger"%>
-          <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModalIngredient">Back to cocktail list</button>
+          <%= link_to "Back to cocktail list", cocktails_path, class: "btn btn-default" %>
         <% end %>
       </div>
     </div>
