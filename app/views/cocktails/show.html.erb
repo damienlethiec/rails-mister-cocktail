@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-sm-6">
       <div class="bordered marged">
         <h1><%= @cocktail.name %></h1>
-        <div class="card card-lg", style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{@cocktail.photo.path}" %>); background-size: cover;">
+        <div class="card card-lg", style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{@cocktail.photo.path}" %>); background-size: cover; background-position: center" >
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
         <div class="row">
           <% @cocktail.doses.each do |dose| %>
           <div class="col-xs-12 col-sm-6">
-            <div class="card" style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{dose.ingredient.photo.path}" %>); background-size: cover;">
+            <div class="card" style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{dose.ingredient.photo.path}" %>); background-size: cover; background-position: center">
               <div class="card-category"><%= dose.description %> of <%= dose.ingredient.name %>
               </div>
               <div class="link_on_link">
