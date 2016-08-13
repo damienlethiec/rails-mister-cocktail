@@ -1,20 +1,38 @@
-<h1 class="text-center"><%= @cocktail.name %></h1>
-<h2>Ingredients</h2>
 <div class="container">
   <div class="row">
-    <% @cocktail.doses.each do |dose| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{dose.ingredient.photo.path}" %>); background-size: cover;">
-        <%#= link_to "#", "#", class: "card-link" %>
+    <div class="col-xs-12 col-sm-6">
+      <div class="bordered marged">
+        <h1><%= @cocktail.name %></h1>
+        <div class="card card-lg", style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{@cocktail.photo.path}" %>); background-size: cover;">
         </div>
-      <p>Description : <%= dose.description %></p>
-      <%= link_to "Delete dose", cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "Are you sure?" } %>
       </div>
-    <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="marged-lg">
+        <h1>How to make it?</h1>
+        <div class="text-center">
+          <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModalDose">
+            Add a dose
+          </button>
+        </div>
+        <div class="row">
+          <% @cocktail.doses.each do |dose| %>
+          <div class="col-xs-12 col-sm-6">
+            <div class="card" style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{dose.ingredient.photo.path}" %>); background-size: cover;">
+              <div class="card-category"><%= dose.description %> of <%= dose.ingredient.name %>
+              </div>
+              <div class="link_on_link">
+                <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "Are you sure?" } do %>
+                <i class="fa fa-trash" style="font-size: 30px; color:white"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModalDose">
-    Add a Dose
-    </button>
 </div>
 
 <%= render "/shared/modal_dose" %>

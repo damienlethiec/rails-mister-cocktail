@@ -9,6 +9,11 @@
   }
 }
 
+.card-lg {
+  height: 500px;
+  margin: 20px;
+}
+
 .card-category {
   padding-top: 10px;
   text-align: center;
@@ -37,4 +42,10 @@
   &:hover {
     opacity: 0.1;
   }
+}
+
+.link_on_link {
+  position: absolute;
+  bottom : 10px;
+  right: 10px;
 }

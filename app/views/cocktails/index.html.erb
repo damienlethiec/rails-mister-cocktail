@@ -1,16 +1,18 @@
-<h1>Here are all the cocktails</h1>
-<div class="wrapper">
-  <div class="container">
-    <div class="row">
-      <% @cocktails.each do |cocktail| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{cocktail.photo.path}" %>); background-size: cover;">
-            <div class="card-category"><%= cocktail.name %></div>
-            <%= link_to "#", cocktail_path(cocktail), class: "card-link"%>
-          </div>
-          <%= link_to "Delete cocktail", cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger" %>
+<h1>Great cocktails !!</h1>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(135deg, rgba(255,209,148,0.6) 0%, rgba(112,225,245,0.2) 50%), url(<%= "http://res.cloudinary.com/ind-pendant/image/upload/#{cocktail.photo.path}" %>); background-size: cover;">
+        <div class="card-category"><%= cocktail.name %></div>
+        <%= link_to "#", cocktail_path(cocktail), class: "card-link"%>
+        <div class="link_on_link">
+          <%= link_to cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash" style="font-size: 30px; color:white"></i>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>

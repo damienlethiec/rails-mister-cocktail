@@ -7,10 +7,10 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for(@ingredient = Ingredient.new) do |f| %>
-          <%= f.input :name, input_html: {required: true} %>
-          <%= f.input :photo, as: :attachinary, input_html: {required: true}%>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= f.button :submit, "Save Ingredient", class: "btn btn-danger" %>
+        <%= f.input :name, input_html: {required: true} %>
+        <%= f.input :photo, as: :attachinary, input_html: {required: true}%>
+        <%= f.button :submit, "Save Ingredient", class: "btn btn-danger" %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <% end %>
       </div>
     </div>
